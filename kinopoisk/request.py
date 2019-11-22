@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-import request
-import random
 
 class Request(object):
     headers = {
@@ -29,6 +27,7 @@ class Request(object):
     #     return response
 
     def get(self, *args, **kwargs):
+        import random
         with open('/app/proxy_list.txt') as f:
             lines = f.read().splitlines()
         kwargs['headers'] = self.headers
